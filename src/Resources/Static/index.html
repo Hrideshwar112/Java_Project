@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShortURL — Simple & Clean</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <!-- QR code library from CDN (small and reliable) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">SHORT<span class="accent">URL</span></div>
+      <nav class="nav">
+        <button id="viewHistoryBtn" class="btn small">History</button>
+        <button class="btn ghost">Sign Up</button>
+        <button class="btn primary">Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <section class="left-card">
+      <h3 class="muted">Shorten a long URL</h3>
+      <input id="longUrl" type="url" placeholder="Enter long link here (must include http/https)" />
+      
+      <button id="shortenBtn" class="btn big">Shorten URL</button>
+
+      <div id="result" class="result hidden">
+        <div class="result-row">
+          <input id="shortUrl" readonly />
+          <div class="result-actions">
+            <button id="visitBtn" class="btn small ghost">Visit</button>
+            <button id="copyBtn" class="btn small ghost">Copy</button>
+            <button id="shareBtn" class="btn small ghost">Share</button>
+            <button id="qrBtn" class="btn small ghost">QR</button>
+          </div>
+        </div>
+
+        <div id="qrModal" class="modal hidden">
+          <div class="modal-content">
+            <div id="qrcode"></div>
+            <button id="closeQr" class="btn small">Close</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <h1>The Original URL Shortener</h1>
+      <p>Create shorter URLs quickly. No login required. History stored in your browser only.</p>
+      <div class="cta-row">
+        <button id="viewPlans" class="btn outline">View Plans</button>
+        <button class="btn ghost">Create Free Account</button>
+      </div>
+
+      <div class="features">
+        <div>Detailed Link Analytics (coming)</div>
+        <div>Bulk Short URLs (coming)</div>
+        <div>Fully Branded Domains (coming)</div>
+        <div>Link Management Features (coming)</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- History modal -->
+  <div id="historyModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Your History</h3>
+      <div id="historyList"></div>
+      <div class="modal-actions">
+        <button id="clearHistory" class="btn equal">Clear</button>
+        <button id="closeHistory" class="btn equal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>Copyright © ShortURL</div>
+      <div class="foot-links">• Terms • Privacy Policy</div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
